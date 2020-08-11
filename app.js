@@ -96,4 +96,7 @@ $(function () {
       console.log(response); // if you're into that sorta thing
     });
   });
+  $("#datepicker-input").click(function () {
+    $("#datepicker-input").blur();
+  });
 });

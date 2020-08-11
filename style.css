@@ -159,7 +159,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   width: 100vw;
   height: calc(100vh - 80px);
-  min-height: 800px;
+  min-height: 900px;
   overflow: hidden;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -485,6 +485,9 @@ p {
   }
   #Contact {
     font-size: 0.9em;
+  }
+  .Socials {
+    width: 50px;
   }
 }
 /*# sourceMappingURL=style.css.map */
