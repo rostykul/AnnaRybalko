@@ -128,7 +128,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #eadad3;
   height: 5px;
   width: 50px;
-  bottom: 0;
+  bottom: 1px;
   left: 32.25vw;
   -webkit-transition: left 0.15s ease-in-out, width 0.0525s ease-in-out;
   transition: left 0.15s ease-in-out, width 0.0525s ease-in-out;
@@ -438,14 +438,16 @@ p {
   #About::after {
     background-color: transparent;
   }
+  #Home div {
+    max-width: 77vw;
+  }
   #Home img {
     z-index: -1;
     position: absolute;
     left: 0;
     top: 0;
-    width: 100vw;
-    height: 100vw;
-    min-height: 1080px;
+    width: 100%;
+    height: 100%;
     border: none;
     padding: 0;
     opacity: 0.2;
@@ -459,22 +461,30 @@ p {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100vw;
-    height: 100vw;
-    min-height: 1080px;
+    width: 100%;
+    height: 100%;
     border: none;
     padding: 0;
     opacity: 0.2;
     margin: 0;
-  }
-  #Contact {
-    font-size: 0.9em;
   }
   #Contact .entry {
     width: 70%;
   }
   .tui-datetime-input {
     width: 70%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #Home {
+    font-size: 0.9em;
+  }
+  #About {
+    font-size: 0.9em;
+  }
+  #Contact {
+    font-size: 0.9em;
   }
 }
 /*# sourceMappingURL=style.css.map */
