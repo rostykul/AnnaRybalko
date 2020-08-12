@@ -272,7 +272,7 @@ p {
 }
 
 #Form .in {
-  border-radius: 5px;
+  border-radius: 7px;
   -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
           box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   border: none;
@@ -393,7 +393,7 @@ p {
 }
 
 #datepicker-input {
-  border-radius: 5px;
+  border-radius: 7px;
   font-weight: bolder;
   -webkit-transition: -webkit-box-shadow 0.2s ease-in-out;
   transition: -webkit-box-shadow 0.2s ease-in-out;
@@ -426,6 +426,96 @@ p {
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   border: none;
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#Notif {
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.95);
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-animation: fadein 0.3s ease-in-out;
+          animation: fadein 0.3s ease-in-out;
+}
+
+#Notif #Notif-question {
+  text-align: center;
+  width: 70vw;
+}
+
+#Notif #Notif-affirm {
+  margin-top: 2em;
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#Notif #Notif-affirm * {
+  cursor: pointer;
+  font-weight: bolder;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 150px;
+  height: 70px;
+}
+
+#Notif #Notif-affirm #Notif-no {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 4px solid white;
+}
+
+#Notif #Notif-affirm #Notif-yes {
+  background-color: white;
+  color: black;
 }
 
 @media screen and (max-width: 1400px) {
@@ -477,17 +567,16 @@ p {
 }
 
 @media screen and (max-width: 900px) {
-  #Home {
-    font-size: 0.9em;
-  }
-  #About {
-    font-size: 0.9em;
-  }
-  #Contact {
-    font-size: 0.9em;
+  .Content .cont {
+    font-size: 0.7em;
+    min-height: 600px;
   }
   .Socials {
     width: 50px;
+  }
+  #Form #Request {
+    height: 60px;
+    width: 200px;
   }
 }
 /*# sourceMappingURL=style.css.map */

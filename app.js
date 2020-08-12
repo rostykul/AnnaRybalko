@@ -87,14 +87,21 @@ $(function () {
   $("#Request").click(function () {
     console.log($("#email").val());
     console.log(datepicker.getDate());
-    $.ajax({
-      url: "https://formspree.io/xknqeoql",
-      method: "POST",
-      data: { message: "hello!" },
-      dataType: "json",
-    }).done(function (response) {
-      console.log(response); // if you're into that sorta thing
-    });
+    // $.ajax({
+    //   url: "https://formspree.io/xknqeoql",
+    //   method: "POST",
+    //   data: { message: "hello!" },
+    //   dataType: "json",
+    // }).done(function (response) {
+    //   console.log(response); // if you're into that sorta thing
+    // });
+    $("#Notif").css("display", "flex");
+  });
+  $("#Notif-no").click(function () {
+    $("#Notif").css("display", "none");
+  });
+  $("#Notif-yes").click(function () {
+    $("#Notif").css("display", "none");
   });
   $("#datepicker-input").click(function () {
     $("#datepicker-input").blur();
