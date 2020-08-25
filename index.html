@@ -21,36 +21,61 @@
     </nav>
     <div class="Content">
       <div id="Home" class="cont">
-        <img
-          src="https://scontent.fyzd1-2.fna.fbcdn.net/v/t31.0-8/14889961_911302322304306_4568204726448316917_o.jpg?_nc_cat=110&_nc_sid=cdbe9c&_nc_ohc=oBVwi8gGuuEAX9JrEcu&_nc_ht=scontent.fyzd1-2.fna&oh=65dcd1510c25e22c3cbb58398e044212&oe=5F531A7C"
+        <img class="Photo"
+          src="./portrait.png"
         />
-        <div>
-          <h1>Lorem ipsum dolor sit amet consectetur</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum aut
-            quas adipisci magni hic suscipit iste autem consectetur. Numquam
-            odio laboriosam veniam dignissimos at reiciendis eos deleniti vero
-            itaque unde! Lorem ipsum dolor sit amet.
-          </p>
+        <img 
+          src="./Left.svg"
+          class="TextButton" id="home-left"/ style="opacity: 0.25; transform: translateY(10px); cursor: auto;">
+        <div class="TextWrapper">
+          <div id="home-child">
+            <h1>Get to know me</h1>
+            <p>
+              My name is Anna Rybalko and I am a Dancer and a certified Ballet Instructor who is currently studying to become a chiropractor at the Canadian Memorial Chiropractic College. I have been teaching ballet technique, conditioning for dancers and pointe for over 10 years now. I have also had the pleasure to perform with an entertainment company for nearly 8 years. The experience I have as a dancer and dance teacher have nudged me to begin online one on one dance coaching. My goal is to help dancers understand and embody dance technique through personalized online coaching sessions that focus on a specific aspect of training to reach the dancers training goals. My approach focuses on the dancer's anatomy and personalized conditioning of the body for optimal performance in dance. 
+            </p>
+          </div>
+          <div>
+            <h1>Qualifications</h1>
+            <p>
+              Bachelor of Fine Arts with Honours in Dance-  York University (Bfa) <br/><br/>
+
+Ballet Teacher Diploma- Canada’s National Ballet School (TTP Dip.)<br/><br/>
+
+Registered Teacher Status- Royal Academy of Dance (RAD RTS)<br/><br/>
+
+Teacher Certification- Open World Dance Foundation<br/><br/>
+
+Teacher Certificate (Level 1+2)- C-I TRAINING™
+            </p>
+          </div>
         </div>
+        <img class="TextButton"
+          src="./Right.svg" id="home-right"
+        />
       </div>
       <div id="About" class="cont">
-        <div>
-          <h1>Lorem ipsum dolor sit amet</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum aut
-            quas adipisci magni hic suscipit iste autem consectetur. Numquam
-            odio laboriosam veniam dignissimos at reiciendis eos deleniti vero
-            itaque unde! Lorem ipsum dolor sit amet consectetur, adipisicing
-            elit. Ipsam, rem aliquid. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Ut totam eius aut exercitationem explicabo beatae?
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime,
-            possimus! Lorem ipsum dolor sit amet consectetur adipisicing. Lorem
-            ipsum dolor sit amet.
-          </p>
-        </div>
-        <img
-          src="https://scontent.fyzd1-2.fna.fbcdn.net/v/t1.0-9/11026031_601973339947558_3263450276469080224_n.jpg?_nc_cat=108&_nc_sid=cdbe9c&_nc_ohc=q8vW3XMqNNoAX9Kt0q5&_nc_ht=scontent.fyzd1-2.fna&oh=2f5a0bc77b01d8f04e4ba2fda9652f21&oe=5F53C611"
+        <img 
+          src="./Left.svg"
+          class="TextButton" id="about-left" style="opacity: 0.25; transform: translateY(10px); cursor: auto;"/>
+          <div class="TextWrapper">
+            <div id="about-child">
+              <h1>About dance coaching</h1>
+              <p>
+                Dance Coaching was designed to be a one on one online, tailored dance technique improvement and education sessions. In our sessions we will dissect technique and learn to embody the necessary coordinations and movement patterns. We will also focus on injury prevention and prehab, to keep you healthy and dancing for a long time. The sessions will focus to suit your dance goal and your personal anatomy. Book a session if you are interested in: improving balance and turns, foot work, pre-pointe preparations, ballet arms, turn out, flexibility and jumps OR any other aspects of technique which you want to improve.
+              </p>
+            </div>
+            <div>
+              <h1>Making an appointment</h1>
+              <p>
+                To book a session you would request a time and describe what your goal is, I would get back to you to confirm our appointment time. Depending on your dance goals you can choose 1 session or request a specialized program, which we would design to consist of the number of sessions of your choosing and need.
+              </p>
+            </div>
+          </div>
+        <img 
+          src="./Right.svg"
+          class="TextButton" id="about-right"/>
+        <img class="Photo"
+          src="./Jump.jpg"
         />
       </div>
       <div id="Contact" class="cont">
@@ -61,10 +86,12 @@
             <input type="text" id="datepicker-input" aria-label="Date-Time" />
             <span class="tui-ico-date"></span>
           </div>
+          <p class="entry invalid" id="invalid-date" style="display: none;" >Date required</p>
           <div id="wrapper" style="margin-top: -1px;"></div>
           <p class="entry">Your email</p>
           <input type="email" id="email" class="entry in" />
-          <p class="entry">Message (optional)</p>
+          <p class="entry invalid" id="invalid-email" style="display: none;">Invalid email</p>
+          <p class="entry error">Describe your goal</p>
           <textarea type="text" id="msg" class="entry in" /></textarea>
           <div class="entry bout">
             <div id="Request">Request Appointment</div>
@@ -73,10 +100,12 @@
       </div>
     </div>
     <div id="Notif">
-      <p id="Notif-question">Are you sure you want to request this appointment?</p>
-      <div id="Notif-affirm">
-        <div id="Notif-no">No</div>
-        <div id="Notif-yes">Yes</div>
+      <div id="Notif-wrapper">
+        <p id="Notif-question">Are you sure you want to request this appointment?</p>
+        <div id="Notif-affirm">
+          <div id="Notif-no">No</div>
+          <div id="Notif-yes">Yes</div>
+        </div>
       </div>
     </div>
     <div class="Socials">
