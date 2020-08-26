@@ -1,7 +1,11 @@
 var UnderLineCurId = "#a";
 var lastDateRequested = localStorage.getItem("lastDateRequested");
-
 var today = new Date();
+const idToLetter = {
+  Home: "#a",
+  About: "#b",
+  Contact: "#c",
+};
 var datepicker = new tui.DatePicker("#wrapper", {
   date: new Date(),
   input: {
@@ -81,7 +85,21 @@ function AffirmYes() {
     lastDateRequested = newDate.getTime() + "";
   }, 2000);
 }
-
+let observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const idName = entry.target.id;
+        MoveUnderline(idToLetter[idName]);
+        console.log(idName);
+      }
+    });
+  },
+  { threshold: 0.7 }
+);
+observer.observe(document.querySelector("#Home"));
+observer.observe(document.querySelector("#About"));
+observer.observe(document.querySelector("#Contact"));
 $(function () {
   $("#a").click(function () {
     $([document.documentElement, document.body]).animate(
@@ -117,24 +135,6 @@ $(function () {
   $(document).ready(function () {
     MoveUnderline("#a");
     $(this).scrollTop(0);
-  });
-  $(window).scroll(function () {
-    var window_top = $(window).scrollTop();
-    var difference = Math.abs($("#Home").offset().top - window_top);
-    if (difference < 150) {
-      MoveUnderline("#a");
-      return;
-    }
-    difference = Math.abs($("#About").offset().top - window_top);
-    if (difference < 150) {
-      MoveUnderline("#b");
-      return;
-    }
-    difference = Math.abs($("#Contact").offset().top - window_top);
-    if (difference < 150) {
-      MoveUnderline("#c");
-      return;
-    }
   });
   $("#Request").click(function () {
     var email = $("#email").val(),

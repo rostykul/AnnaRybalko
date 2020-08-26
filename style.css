@@ -111,16 +111,6 @@ body::-webkit-scrollbar-thumb {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -webkit-transition: color 0.05s ease-in-out;
-  transition: color 0.05s ease-in-out;
-}
-
-.HotBar div:hover {
-  color: rgba(234, 218, 211, 0.7);
-}
-
-.HotBar div:active {
-  color: #eadad3;
 }
 
 .HotBar .UnderLine {
@@ -330,6 +320,22 @@ p {
   padding-bottom: 10px;
   height: 75px;
   resize: none;
+}
+
+#Form ::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+#Form :-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+#Form ::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+#Form ::placeholder {
+  color: rgba(0, 0, 0, 0.3);
 }
 
 #Form .bout {
