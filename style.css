@@ -694,4 +694,14 @@ p {
     width: 70%;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .Content .cont {
+    font-size: 0.85em;
+  }
+  .Content .TextButton {
+    height: 25px;
+    padding: 25px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
