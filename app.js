@@ -91,7 +91,6 @@ let observer = new IntersectionObserver(
       if (entry.isIntersecting) {
         const idName = entry.target.id;
         MoveUnderline(idToLetter[idName]);
-        console.log(idName);
       }
     });
   },
