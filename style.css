@@ -703,11 +703,21 @@ p {
 
 @media screen and (max-width: 600px) {
   .Content .cont {
-    font-size: 0.6em;
+    font-size: 0.7em;
   }
   .Content .TextButton {
     height: 25px;
     padding: 25px;
+  }
+}
+
+@media screen and (max-width: 600px) and (max-height: 700px) {
+  .Content .cont {
+    font-size: 0.6em;
+  }
+  .Content .TextButton {
+    height: 18px;
+    padding: 18px;
   }
 }
 /*# sourceMappingURL=style.css.map */
