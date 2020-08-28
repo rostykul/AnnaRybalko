@@ -1,3 +1,10 @@
+//Mobile VH FIX
+if ($("body").hasClass("mobile")) {
+  $(".cont").css({ height: window.innerHeight - 80 });
+  $(".cont").css({ "min-height": 0 });
+}
+//VX FIX END
+
 var UnderLineCurId = "#a";
 var lastDateRequested = localStorage.getItem("lastDateRequested");
 var today = new Date();
