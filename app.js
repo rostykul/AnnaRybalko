@@ -4,7 +4,7 @@ if ($("body").hasClass("mobile")) {
   $(".cont").css({ "min-height": 0 });
 }
 //VX FIX END
-
+var about_index = 0;
 var UnderLineCurId = "#a";
 var lastDateRequested = localStorage.getItem("lastDateRequested");
 var today = new Date();
@@ -12,6 +12,35 @@ const idToLetter = {
   Home: "#a",
   About: "#b",
   Contact: "#c",
+};
+
+var changeAboutOnIndex = (index) => {
+  var active_pointers = [false, false];
+  if (index === 1) {
+    $("#about-child").css("margin-left", "-100%");
+    active_pointers = [true, true];
+  } else if (index === 2) {
+    $("#about-child").css("margin-left", "-200%");
+    active_pointers = [true, false];
+  } else {
+    $("#about-child").css("margin-left", "0%");
+    active_pointers = [false, true];
+  }
+  [0, 1].forEach((index_id) => {
+    var id = ["#about-left", "#about-right"][index_id];
+    if (active_pointers[index_id]) {
+      var opacity = 1;
+      var trans = 0;
+      var cursor = "pointer";
+    } else {
+      var opacity = 0.25;
+      var trans = 10;
+      var cursor = "auto";
+    }
+    $(id).css("opacity", opacity);
+    $(id).css("transform", `translateY(${trans}px)`);
+    $(id).css("cursor", cursor);
+  });
 };
 var datepicker = new tui.DatePicker("#wrapper", {
   date: new Date(),
@@ -45,6 +74,7 @@ function validateEmail(email) {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
+
 function formatAMPM(date) {
   var hours = date.getHours();
   var minutes = date.getMinutes();
@@ -202,23 +232,13 @@ $(function () {
   });
 
   $("#about-left").click(function () {
-    $("#about-child").css("margin-left", "0%");
-
-    $("#about-right").css("opacity", "1");
-    $("#about-right").css("transform", "translateY(0px)");
-    $("#about-right").css("cursor", "pointer");
-    $("#about-left").css("opacity", "0.25");
-    $("#about-left").css("transform", "translateY(10px)");
-    $("#about-left").css("cursor", "auto");
+    about_index = Math.max(Math.min(--about_index, 2), 0);
+    console.log("YESS");
+    changeAboutOnIndex(about_index);
   });
   $("#about-right").click(function () {
-    $("#about-child").css("margin-left", "-100%");
+    about_index = Math.max(Math.min(++about_index, 2), 0);
 
-    $("#about-left").css("opacity", "1");
-    $("#about-left").css("transform", "translateY(0px)");
-    $("#about-left").css("cursor", "pointer");
-    $("#about-right").css("opacity", "0.25");
-    $("#about-right").css("transform", "translateY(10px)");
-    $("#about-right").css("cursor", "auto");
+    changeAboutOnIndex(about_index);
   });
 });
